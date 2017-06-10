@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/edit.css"/>
+</head>
+<body>
+    <div class="editContent">
+        <textarea name="content" style="width:100%;height: 500px;max-height:400px;"></textarea>
+        <div class="set">
+            <button type="button" class="btn btn-primary btn-ml yulan">预览</button>
+            <button type="button" class="btn btn-primary btn-ml" data-toggle="modal" data-target="#myModal" id="submit">提交</button>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">提交</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="select" class="col-sm-2 control-label">类型</label>
+                                    <div class="col-sm-10">
+                                        <select name="" id="select" class="form-control">
+                                            <option value="">公告</option>
+                                            <option value="">知识</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date1" class="col-sm-2 control-label">知识生效时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="date1" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date2" class="col-sm-2 control-label">知识失效时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="date2" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="relationship" class="col-sm-2 control-label">归属关系</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="relationship" value="">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <button type="button" class="btn btn-primary choice">选择</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="update1" class="col-sm-2 control-label">更新时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="update1" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="update2" class="col-sm-2 control-label">更新备注</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="update2" value="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary subSubmit">保存</button>
+                        </div>
+                        <!-- 选择文件位置---逻辑树-->
+                        <div class="Logical">
+                            <ul id="treeDemo" class="ztree"></ul>
+                            <button type="button" class="btn btn-primary" id="sure">确定</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
+<script src="../js/kindeditor-4.1.7/kindeditor-all-min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="js/edit.js"></script>
+</html>

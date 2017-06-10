@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxzt.mapper.DddcdrMapper" >
+  <resultMap id="BaseResultMap" type="com.wxzt.pojo.Dddcdr" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="sipnum" property="sipnum" jdbcType="VARCHAR" />
+    <result column="telnum" property="telnum" jdbcType="VARCHAR" />
+    <result column="Direction" property="direction" jdbcType="VARCHAR" />
+    <result column="calllen" property="calllen" jdbcType="INTEGER" />
+    <result column="dtstart" property="dtstart" jdbcType="TIMESTAMP" />
+    <result column="dtend" property="dtend" jdbcType="TIMESTAMP" />
+    <result column="callret" property="callret" jdbcType="VARCHAR" />
+    <result column="recfilename" property="recfilename" jdbcType="VARCHAR" />
+    <result column="Worknum" property="worknum" jdbcType="VARCHAR" />
+    <result column="Workname" property="workname" jdbcType="VARCHAR" />
+    <result column="Groupnum" property="groupnum" jdbcType="INTEGER" />
+    <result column="Groupname" property="groupname" jdbcType="VARCHAR" />
+    <result column="CalloutTaskID" property="callouttaskid" jdbcType="INTEGER" />
+    <result column="CalloutID" property="calloutid" jdbcType="INTEGER" />
+    <result column="billsec" property="billsec" jdbcType="INTEGER" />
+    <result column="progresssec" property="progresssec" jdbcType="INTEGER" />
+    <result column="answersec" property="answersec" jdbcType="INTEGER" />
+    <result column="waitsec" property="waitsec" jdbcType="INTEGER" />
+    <result column="progress_mediasec" property="progressMediasec" jdbcType="INTEGER" />
+    <result column="Province" property="province" jdbcType="VARCHAR" />
+    <result column="City" property="city" jdbcType="VARCHAR" />
+    <result column="TelType" property="teltype" jdbcType="VARCHAR" />
+    <result column="CardType" property="cardtype" jdbcType="VARCHAR" />
+    <result column="HotLine" property="hotline" jdbcType="VARCHAR" />
+    <result column="TicketType" property="tickettype" jdbcType="INTEGER" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+    <result column="IsRead" property="isread" jdbcType="INTEGER" />
+    <result column="dtCreate" property="dtcreate" jdbcType="TIMESTAMP" />
+    <result column="dtacdStart" property="dtacdstart" jdbcType="TIMESTAMP" />
+    <result column="dtringStart" property="dtringstart" jdbcType="TIMESTAMP" />
+    <result column="dtspeakStart" property="dtspeakstart" jdbcType="TIMESTAMP" />
+    <result column="dthangup" property="dthangup" jdbcType="TIMESTAMP" />
+    <result column="TimelenTotalCall" property="timelentotalcall" jdbcType="INTEGER" />
+    <result column="TimelenIvr" property="timelenivr" jdbcType="INTEGER" />
+    <result column="TimelenAcd" property="timelenacd" jdbcType="INTEGER" />
+    <result column="TimelenRing" property="timelenring" jdbcType="INTEGER" />
+    <result column="TimelenSpeak" property="timelenspeak" jdbcType="INTEGER" />
+    <result column="ScoreSatis" property="scoresatis" jdbcType="INTEGER" />
+    <result column="ScoreQuality" property="scorequality" jdbcType="INTEGER" />
+    <result column="DTMF" property="dtmf" jdbcType="VARCHAR" />
+    <result column="CallOID" property="calloid" jdbcType="VARCHAR" />
+    <result column="QualityNum" property="qualitynum" jdbcType="VARCHAR" />
+    <result column="QualityTime" property="qualitytime" jdbcType="VARCHAR" />
+    <result column="QualityWorknum" property="qualityworknum" jdbcType="VARCHAR" />
+    <result column="CompanyCode" property="companycode" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.wxzt.pojo.Dddcdr" extends="BaseResultMap" >
+    <result column="QualityNote" property="qualitynote" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, uuid, sipnum, telnum, Direction, calllen, dtstart, dtend, callret, recfilename, 
+    Worknum, Workname, Groupnum, Groupname, CalloutTaskID, CalloutID, billsec, progresssec, 
+    answersec, waitsec, progress_mediasec, Province, City, TelType, CardType, HotLine, 
+    TicketType, Remark, IsRead, dtCreate, dtacdStart, dtringStart, dtspeakStart, dthangup, 
+    TimelenTotalCall, TimelenIvr, TimelenAcd, TimelenRing, TimelenSpeak, ScoreSatis, 
+    ScoreQuality, DTMF, CallOID, QualityNum, QualityTime, QualityWorknum, CompanyCode
+  </sql>
+  <sql id="Blob_Column_List" >
+    QualityNote
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.wxzt.pojo.DddcdrExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dddcdr
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wxzt.pojo.DddcdrExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from dddcdr
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dddcdr
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from dddcdr
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wxzt.pojo.DddcdrExample" >
+    delete from dddcdr
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wxzt.pojo.Dddcdr" >
+    insert into dddcdr (id, uuid, sipnum, 
+      telnum, Direction, calllen, 
+      dtstart, dtend, callret, 
+      recfilename, Worknum, Workname, 
+      Groupnum, Groupname, CalloutTaskID, 
+      CalloutID, billsec, progresssec, 
+      answersec, waitsec, progress_mediasec, 
+      Province, City, TelType, 
+      CardType, HotLine, TicketType, 
+      Remark, IsRead, dtCreate, 
+      dtacdStart, dtringStart, dtspeakStart, 
+      dthangup, TimelenTotalCall, TimelenIvr, 
+      TimelenAcd, TimelenRing, TimelenSpeak, 
+      ScoreSatis, ScoreQuality, DTMF, 
+      CallOID, QualityNum, QualityTime, 
+      QualityWorknum, CompanyCode, QualityNote
+      )
+    values (#{id,jdbcType=INTEGER}, #{uuid,jdbcType=VARCHAR}, #{sipnum,jdbcType=VARCHAR}, 
+      #{telnum,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, #{calllen,jdbcType=INTEGER}, 
+      #{dtstart,jdbcType=TIMESTAMP}, #{dtend,jdbcType=TIMESTAMP}, #{callret,jdbcType=VARCHAR}, 
+      #{recfilename,jdbcType=VARCHAR}, #{worknum,jdbcType=VARCHAR}, #{workname,jdbcType=VARCHAR}, 
+      #{groupnum,jdbcType=INTEGER}, #{groupname,jdbcType=VARCHAR}, #{callouttaskid,jdbcType=INTEGER}, 
+      #{calloutid,jdbcType=INTEGER}, #{billsec,jdbcType=INTEGER}, #{progresssec,jdbcType=INTEGER}, 
+      #{answersec,jdbcType=INTEGER}, #{waitsec,jdbcType=INTEGER}, #{progressMediasec,jdbcType=INTEGER}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{teltype,jdbcType=VARCHAR}, 
+      #{cardtype,jdbcType=VARCHAR}, #{hotline,jdbcType=VARCHAR}, #{tickettype,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{isread,jdbcType=INTEGER}, #{dtcreate,jdbcType=TIMESTAMP}, 
+      #{dtacdstart,jdbcType=TIMESTAMP}, #{dtringstart,jdbcType=TIMESTAMP}, #{dtspeakstart,jdbcType=TIMESTAMP}, 
+      #{dthangup,jdbcType=TIMESTAMP}, #{timelentotalcall,jdbcType=INTEGER}, #{timelenivr,jdbcType=INTEGER}, 
+      #{timelenacd,jdbcType=INTEGER}, #{timelenring,jdbcType=INTEGER}, #{timelenspeak,jdbcType=INTEGER}, 
+      #{scoresatis,jdbcType=INTEGER}, #{scorequality,jdbcType=INTEGER}, #{dtmf,jdbcType=VARCHAR}, 
+      #{calloid,jdbcType=VARCHAR}, #{qualitynum,jdbcType=VARCHAR}, #{qualitytime,jdbcType=VARCHAR}, 
+      #{qualityworknum,jdbcType=VARCHAR}, #{companycode,jdbcType=VARCHAR}, #{qualitynote,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wxzt.pojo.Dddcdr" >
+    insert into dddcdr
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uuid != null" >
+        uuid,
+      </if>
+      <if test="sipnum != null" >
+        sipnum,
+      </if>
+      <if test="telnum != null" >
+        telnum,
+      </if>
+      <if test="direction != null" >
+        Direction,
+      </if>
+      <if test="calllen != null" >
+        calllen,
+      </if>
+      <if test="dtstart != null" >
+        dtstart,
+      </if>
+      <if test="dtend != null" >
+        dtend,
+      </if>
+      <if test="callret != null" >
+        callret,
+      </if>
+      <if test="recfilename != null" >
+        recfilename,
+      </if>
+      <if test="worknum != null" >
+        Worknum,
+      </if>
+      <if test="workname != null" >
+        Workname,
+      </if>
+      <if test="groupnum != null" >
+        Groupnum,
+      </if>
+      <if test="groupname != null" >
+        Groupname,
+      </if>
+      <if test="callouttaskid != null" >
+        CalloutTaskID,
+      </if>
+      <if test="calloutid != null" >
+        CalloutID,
+      </if>
+      <if test="billsec != null" >
+        billsec,
+      </if>
+      <if test="progresssec != null" >
+        progresssec,
+      </if>
+      <if test="answersec != null" >
+        answersec,
+      </if>
+      <if test="waitsec != null" >
+        waitsec,
+      </if>
+      <if test="progressMediasec != null" >
+        progress_mediasec,
+      </if>
+      <if test="province != null" >
+        Province,
+      </if>
+      <if test="city != null" >
+        City,
+      </if>
+      <if test="teltype != null" >
+        TelType,
+      </if>
+      <if test="cardtype != null" >
+        CardType,
+      </if>
+      <if test="hotline != null" >
+        HotLine,
+      </if>
+      <if test="tickettype != null" >
+        TicketType,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+      <if test="isread != null" >
+        IsRead,
+      </if>
+      <if test="dtcreate != null" >
+        dtCreate,
+      </if>
+      <if test="dtacdstart != null" >
+        dtacdStart,
+      </if>
+      <if test="dtringstart != null" >
+        dtringStart,
+      </if>
+      <if test="dtspeakstart != null" >
+        dtspeakStart,
+      </if>
+      <if test="dthangup != null" >
+        dthangup,
+      </if>
+      <if test="timelentotalcall != null" >
+        TimelenTotalCall,
+      </if>
+      <if test="timelenivr != null" >
+        TimelenIvr,
+      </if>
+      <if test="timelenacd != null" >
+        TimelenAcd,
+      </if>
+      <if test="timelenring != null" >
+        TimelenRing,
+      </if>
+      <if test="timelenspeak != null" >
+        TimelenSpeak,
+      </if>
+      <if test="scoresatis != null" >
+        ScoreSatis,
+      </if>
+      <if test="scorequality != null" >
+        ScoreQuality,
+      </if>
+      <if test="dtmf != null" >
+        DTMF,
+      </if>
+      <if test="calloid != null" >
+        CallOID,
+      </if>
+      <if test="qualitynum != null" >
+        QualityNum,
+      </if>
+      <if test="qualitytime != null" >
+        QualityTime,
+      </if>
+      <if test="qualityworknum != null" >
+        QualityWorknum,
+      </if>
+      <if test="companycode != null" >
+        CompanyCode,
+      </if>
+      <if test="qualitynote != null" >
+        QualityNote,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="sipnum != null" >
+        #{sipnum,jdbcType=VARCHAR},
+      </if>
+      <if test="telnum != null" >
+        #{telnum,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="calllen != null" >
+        #{calllen,jdbcType=INTEGER},
+      </if>
+      <if test="dtstart != null" >
+        #{dtstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtend != null" >
+        #{dtend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="callret != null" >
+        #{callret,jdbcType=VARCHAR},
+      </if>
+      <if test="recfilename != null" >
+        #{recfilename,jdbcType=VARCHAR},
+      </if>
+      <if test="worknum != null" >
+        #{worknum,jdbcType=VARCHAR},
+      </if>
+      <if test="workname != null" >
+        #{workname,jdbcType=VARCHAR},
+      </if>
+      <if test="groupnum != null" >
+        #{groupnum,jdbcType=INTEGER},
+      </if>
+      <if test="groupname != null" >
+        #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="callouttaskid != null" >
+        #{callouttaskid,jdbcType=INTEGER},
+      </if>
+      <if test="calloutid != null" >
+        #{calloutid,jdbcType=INTEGER},
+      </if>
+      <if test="billsec != null" >
+        #{billsec,jdbcType=INTEGER},
+      </if>
+      <if test="progresssec != null" >
+        #{progresssec,jdbcType=INTEGER},
+      </if>
+      <if test="answersec != null" >
+        #{answersec,jdbcType=INTEGER},
+      </if>
+      <if test="waitsec != null" >
+        #{waitsec,jdbcType=INTEGER},
+      </if>
+      <if test="progressMediasec != null" >
+        #{progressMediasec,jdbcType=INTEGER},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="teltype != null" >
+        #{teltype,jdbcType=VARCHAR},
+      </if>
+      <if test="cardtype != null" >
+        #{cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="hotline != null" >
+        #{hotline,jdbcType=VARCHAR},
+      </if>
+      <if test="tickettype != null" >
+        #{tickettype,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isread != null" >
+        #{isread,jdbcType=INTEGER},
+      </if>
+      <if test="dtcreate != null" >
+        #{dtcreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtacdstart != null" >
+        #{dtacdstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtringstart != null" >
+        #{dtringstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtspeakstart != null" >
+        #{dtspeakstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dthangup != null" >
+        #{dthangup,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timelentotalcall != null" >
+        #{timelentotalcall,jdbcType=INTEGER},
+      </if>
+      <if test="timelenivr != null" >
+        #{timelenivr,jdbcType=INTEGER},
+      </if>
+      <if test="timelenacd != null" >
+        #{timelenacd,jdbcType=INTEGER},
+      </if>
+      <if test="timelenring != null" >
+        #{timelenring,jdbcType=INTEGER},
+      </if>
+      <if test="timelenspeak != null" >
+        #{timelenspeak,jdbcType=INTEGER},
+      </if>
+      <if test="scoresatis != null" >
+        #{scoresatis,jdbcType=INTEGER},
+      </if>
+      <if test="scorequality != null" >
+        #{scorequality,jdbcType=INTEGER},
+      </if>
+      <if test="dtmf != null" >
+        #{dtmf,jdbcType=VARCHAR},
+      </if>
+      <if test="calloid != null" >
+        #{calloid,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitynum != null" >
+        #{qualitynum,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitytime != null" >
+        #{qualitytime,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityworknum != null" >
+        #{qualityworknum,jdbcType=VARCHAR},
+      </if>
+      <if test="companycode != null" >
+        #{companycode,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitynote != null" >
+        #{qualitynote,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wxzt.pojo.DddcdrExample" resultType="java.lang.Integer" >
+    select count(*) from dddcdr
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update dddcdr
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.uuid != null" >
+        uuid = #{record.uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sipnum != null" >
+        sipnum = #{record.sipnum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telnum != null" >
+        telnum = #{record.telnum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.direction != null" >
+        Direction = #{record.direction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calllen != null" >
+        calllen = #{record.calllen,jdbcType=INTEGER},
+      </if>
+      <if test="record.dtstart != null" >
+        dtstart = #{record.dtstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dtend != null" >
+        dtend = #{record.dtend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.callret != null" >
+        callret = #{record.callret,jdbcType=VARCHAR},
+      </if>
+      <if test="record.recfilename != null" >
+        recfilename = #{record.recfilename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.worknum != null" >
+        Worknum = #{record.worknum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workname != null" >
+        Workname = #{record.workname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.groupnum != null" >
+        Groupnum = #{record.groupnum,jdbcType=INTEGER},
+      </if>
+      <if test="record.groupname != null" >
+        Groupname = #{record.groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.callouttaskid != null" >
+        CalloutTaskID = #{record.callouttaskid,jdbcType=INTEGER},
+      </if>
+      <if test="record.calloutid != null" >
+        CalloutID = #{record.calloutid,jdbcType=INTEGER},
+      </if>
+      <if test="record.billsec != null" >
+        billsec = #{record.billsec,jdbcType=INTEGER},
+      </if>
+      <if test="record.progresssec != null" >
+        progresssec = #{record.progresssec,jdbcType=INTEGER},
+      </if>
+      <if test="record.answersec != null" >
+        answersec = #{record.answersec,jdbcType=INTEGER},
+      </if>
+      <if test="record.waitsec != null" >
+        waitsec = #{record.waitsec,jdbcType=INTEGER},
+      </if>
+      <if test="record.progressMediasec != null" >
+        progress_mediasec = #{record.progressMediasec,jdbcType=INTEGER},
+      </if>
+      <if test="record.province != null" >
+        Province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        City = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teltype != null" >
+        TelType = #{record.teltype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cardtype != null" >
+        CardType = #{record.cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hotline != null" >
+        HotLine = #{record.hotline,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tickettype != null" >
+        TicketType = #{record.tickettype,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null" >
+        Remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isread != null" >
+        IsRead = #{record.isread,jdbcType=INTEGER},
+      </if>
+      <if test="record.dtcreate != null" >
+        dtCreate = #{record.dtcreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dtacdstart != null" >
+        dtacdStart = #{record.dtacdstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dtringstart != null" >
+        dtringStart = #{record.dtringstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dtspeakstart != null" >
+        dtspeakStart = #{record.dtspeakstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dthangup != null" >
+        dthangup = #{record.dthangup,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.timelentotalcall != null" >
+        TimelenTotalCall = #{record.timelentotalcall,jdbcType=INTEGER},
+      </if>
+      <if test="record.timelenivr != null" >
+        TimelenIvr = #{record.timelenivr,jdbcType=INTEGER},
+      </if>
+      <if test="record.timelenacd != null" >
+        TimelenAcd = #{record.timelenacd,jdbcType=INTEGER},
+      </if>
+      <if test="record.timelenring != null" >
+        TimelenRing = #{record.timelenring,jdbcType=INTEGER},
+      </if>
+      <if test="record.timelenspeak != null" >
+        TimelenSpeak = #{record.timelenspeak,jdbcType=INTEGER},
+      </if>
+      <if test="record.scoresatis != null" >
+        ScoreSatis = #{record.scoresatis,jdbcType=INTEGER},
+      </if>
+      <if test="record.scorequality != null" >
+        ScoreQuality = #{record.scorequality,jdbcType=INTEGER},
+      </if>
+      <if test="record.dtmf != null" >
+        DTMF = #{record.dtmf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calloid != null" >
+        CallOID = #{record.calloid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualitynum != null" >
+        QualityNum = #{record.qualitynum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualitytime != null" >
+        QualityTime = #{record.qualitytime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualityworknum != null" >
+        QualityWorknum = #{record.qualityworknum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companycode != null" >
+        CompanyCode = #{record.companycode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualitynote != null" >
+        QualityNote = #{record.qualitynote,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update dddcdr
+    set id = #{record.id,jdbcType=INTEGER},
+      uuid = #{record.uuid,jdbcType=VARCHAR},
+      sipnum = #{record.sipnum,jdbcType=VARCHAR},
+      telnum = #{record.telnum,jdbcType=VARCHAR},
+      Direction = #{record.direction,jdbcType=VARCHAR},
+      calllen = #{record.calllen,jdbcType=INTEGER},
+      dtstart = #{record.dtstart,jdbcType=TIMESTAMP},
+      dtend = #{record.dtend,jdbcType=TIMESTAMP},
+      callret = #{record.callret,jdbcType=VARCHAR},
+      recfilename = #{record.recfilename,jdbcType=VARCHAR},
+      Worknum = #{record.worknum,jdbcType=VARCHAR},
+      Workname = #{record.workname,jdbcType=VARCHAR},
+      Groupnum = #{record.groupnum,jdbcType=INTEGER},
+      Groupname = #{record.groupname,jdbcType=VARCHAR},
+      CalloutTaskID = #{record.callouttaskid,jdbcType=INTEGER},
+      CalloutID = #{record.calloutid,jdbcType=INTEGER},
+      billsec = #{record.billsec,jdbcType=INTEGER},
+      progresssec = #{record.progresssec,jdbcType=INTEGER},
+      answersec = #{record.answersec,jdbcType=INTEGER},
+      waitsec = #{record.waitsec,jdbcType=INTEGER},
+      progress_mediasec = #{record.progressMediasec,jdbcType=INTEGER},
+      Province = #{record.province,jdbcType=VARCHAR},
+      City = #{record.city,jdbcType=VARCHAR},
+      TelType = #{record.teltype,jdbcType=VARCHAR},
+      CardType = #{record.cardtype,jdbcType=VARCHAR},
+      HotLine = #{record.hotline,jdbcType=VARCHAR},
+      TicketType = #{record.tickettype,jdbcType=INTEGER},
+      Remark = #{record.remark,jdbcType=VARCHAR},
+      IsRead = #{record.isread,jdbcType=INTEGER},
+      dtCreate = #{record.dtcreate,jdbcType=TIMESTAMP},
+      dtacdStart = #{record.dtacdstart,jdbcType=TIMESTAMP},
+      dtringStart = #{record.dtringstart,jdbcType=TIMESTAMP},
+      dtspeakStart = #{record.dtspeakstart,jdbcType=TIMESTAMP},
+      dthangup = #{record.dthangup,jdbcType=TIMESTAMP},
+      TimelenTotalCall = #{record.timelentotalcall,jdbcType=INTEGER},
+      TimelenIvr = #{record.timelenivr,jdbcType=INTEGER},
+      TimelenAcd = #{record.timelenacd,jdbcType=INTEGER},
+      TimelenRing = #{record.timelenring,jdbcType=INTEGER},
+      TimelenSpeak = #{record.timelenspeak,jdbcType=INTEGER},
+      ScoreSatis = #{record.scoresatis,jdbcType=INTEGER},
+      ScoreQuality = #{record.scorequality,jdbcType=INTEGER},
+      DTMF = #{record.dtmf,jdbcType=VARCHAR},
+      CallOID = #{record.calloid,jdbcType=VARCHAR},
+      QualityNum = #{record.qualitynum,jdbcType=VARCHAR},
+      QualityTime = #{record.qualitytime,jdbcType=VARCHAR},
+      QualityWorknum = #{record.qualityworknum,jdbcType=VARCHAR},
+      CompanyCode = #{record.companycode,jdbcType=VARCHAR},
+      QualityNote = #{record.qualitynote,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update dddcdr
+    set id = #{record.id,jdbcType=INTEGER},
+      uuid = #{record.uuid,jdbcType=VARCHAR},
+      sipnum = #{record.sipnum,jdbcType=VARCHAR},
+      telnum = #{record.telnum,jdbcType=VARCHAR},
+      Direction = #{record.direction,jdbcType=VARCHAR},
+      calllen = #{record.calllen,jdbcType=INTEGER},
+      dtstart = #{record.dtstart,jdbcType=TIMESTAMP},
+      dtend = #{record.dtend,jdbcType=TIMESTAMP},
+      callret = #{record.callret,jdbcType=VARCHAR},
+      recfilename = #{record.recfilename,jdbcType=VARCHAR},
+      Worknum = #{record.worknum,jdbcType=VARCHAR},
+      Workname = #{record.workname,jdbcType=VARCHAR},
+      Groupnum = #{record.groupnum,jdbcType=INTEGER},
+      Groupname = #{record.groupname,jdbcType=VARCHAR},
+      CalloutTaskID = #{record.callouttaskid,jdbcType=INTEGER},
+      CalloutID = #{record.calloutid,jdbcType=INTEGER},
+      billsec = #{record.billsec,jdbcType=INTEGER},
+      progresssec = #{record.progresssec,jdbcType=INTEGER},
+      answersec = #{record.answersec,jdbcType=INTEGER},
+      waitsec = #{record.waitsec,jdbcType=INTEGER},
+      progress_mediasec = #{record.progressMediasec,jdbcType=INTEGER},
+      Province = #{record.province,jdbcType=VARCHAR},
+      City = #{record.city,jdbcType=VARCHAR},
+      TelType = #{record.teltype,jdbcType=VARCHAR},
+      CardType = #{record.cardtype,jdbcType=VARCHAR},
+      HotLine = #{record.hotline,jdbcType=VARCHAR},
+      TicketType = #{record.tickettype,jdbcType=INTEGER},
+      Remark = #{record.remark,jdbcType=VARCHAR},
+      IsRead = #{record.isread,jdbcType=INTEGER},
+      dtCreate = #{record.dtcreate,jdbcType=TIMESTAMP},
+      dtacdStart = #{record.dtacdstart,jdbcType=TIMESTAMP},
+      dtringStart = #{record.dtringstart,jdbcType=TIMESTAMP},
+      dtspeakStart = #{record.dtspeakstart,jdbcType=TIMESTAMP},
+      dthangup = #{record.dthangup,jdbcType=TIMESTAMP},
+      TimelenTotalCall = #{record.timelentotalcall,jdbcType=INTEGER},
+      TimelenIvr = #{record.timelenivr,jdbcType=INTEGER},
+      TimelenAcd = #{record.timelenacd,jdbcType=INTEGER},
+      TimelenRing = #{record.timelenring,jdbcType=INTEGER},
+      TimelenSpeak = #{record.timelenspeak,jdbcType=INTEGER},
+      ScoreSatis = #{record.scoresatis,jdbcType=INTEGER},
+      ScoreQuality = #{record.scorequality,jdbcType=INTEGER},
+      DTMF = #{record.dtmf,jdbcType=VARCHAR},
+      CallOID = #{record.calloid,jdbcType=VARCHAR},
+      QualityNum = #{record.qualitynum,jdbcType=VARCHAR},
+      QualityTime = #{record.qualitytime,jdbcType=VARCHAR},
+      QualityWorknum = #{record.qualityworknum,jdbcType=VARCHAR},
+      CompanyCode = #{record.companycode,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxzt.pojo.Dddcdr" >
+    update dddcdr
+    <set >
+      <if test="uuid != null" >
+        uuid = #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="sipnum != null" >
+        sipnum = #{sipnum,jdbcType=VARCHAR},
+      </if>
+      <if test="telnum != null" >
+        telnum = #{telnum,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        Direction = #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="calllen != null" >
+        calllen = #{calllen,jdbcType=INTEGER},
+      </if>
+      <if test="dtstart != null" >
+        dtstart = #{dtstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtend != null" >
+        dtend = #{dtend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="callret != null" >
+        callret = #{callret,jdbcType=VARCHAR},
+      </if>
+      <if test="recfilename != null" >
+        recfilename = #{recfilename,jdbcType=VARCHAR},
+      </if>
+      <if test="worknum != null" >
+        Worknum = #{worknum,jdbcType=VARCHAR},
+      </if>
+      <if test="workname != null" >
+        Workname = #{workname,jdbcType=VARCHAR},
+      </if>
+      <if test="groupnum != null" >
+        Groupnum = #{groupnum,jdbcType=INTEGER},
+      </if>
+      <if test="groupname != null" >
+        Groupname = #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="callouttaskid != null" >
+        CalloutTaskID = #{callouttaskid,jdbcType=INTEGER},
+      </if>
+      <if test="calloutid != null" >
+        CalloutID = #{calloutid,jdbcType=INTEGER},
+      </if>
+      <if test="billsec != null" >
+        billsec = #{billsec,jdbcType=INTEGER},
+      </if>
+      <if test="progresssec != null" >
+        progresssec = #{progresssec,jdbcType=INTEGER},
+      </if>
+      <if test="answersec != null" >
+        answersec = #{answersec,jdbcType=INTEGER},
+      </if>
+      <if test="waitsec != null" >
+        waitsec = #{waitsec,jdbcType=INTEGER},
+      </if>
+      <if test="progressMediasec != null" >
+        progress_mediasec = #{progressMediasec,jdbcType=INTEGER},
+      </if>
+      <if test="province != null" >
+        Province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        City = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="teltype != null" >
+        TelType = #{teltype,jdbcType=VARCHAR},
+      </if>
+      <if test="cardtype != null" >
+        CardType = #{cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="hotline != null" >
+        HotLine = #{hotline,jdbcType=VARCHAR},
+      </if>
+      <if test="tickettype != null" >
+        TicketType = #{tickettype,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isread != null" >
+        IsRead = #{isread,jdbcType=INTEGER},
+      </if>
+      <if test="dtcreate != null" >
+        dtCreate = #{dtcreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtacdstart != null" >
+        dtacdStart = #{dtacdstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtringstart != null" >
+        dtringStart = #{dtringstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtspeakstart != null" >
+        dtspeakStart = #{dtspeakstart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dthangup != null" >
+        dthangup = #{dthangup,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timelentotalcall != null" >
+        TimelenTotalCall = #{timelentotalcall,jdbcType=INTEGER},
+      </if>
+      <if test="timelenivr != null" >
+        TimelenIvr = #{timelenivr,jdbcType=INTEGER},
+      </if>
+      <if test="timelenacd != null" >
+        TimelenAcd = #{timelenacd,jdbcType=INTEGER},
+      </if>
+      <if test="timelenring != null" >
+        TimelenRing = #{timelenring,jdbcType=INTEGER},
+      </if>
+      <if test="timelenspeak != null" >
+        TimelenSpeak = #{timelenspeak,jdbcType=INTEGER},
+      </if>
+      <if test="scoresatis != null" >
+        ScoreSatis = #{scoresatis,jdbcType=INTEGER},
+      </if>
+      <if test="scorequality != null" >
+        ScoreQuality = #{scorequality,jdbcType=INTEGER},
+      </if>
+      <if test="dtmf != null" >
+        DTMF = #{dtmf,jdbcType=VARCHAR},
+      </if>
+      <if test="calloid != null" >
+        CallOID = #{calloid,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitynum != null" >
+        QualityNum = #{qualitynum,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitytime != null" >
+        QualityTime = #{qualitytime,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityworknum != null" >
+        QualityWorknum = #{qualityworknum,jdbcType=VARCHAR},
+      </if>
+      <if test="companycode != null" >
+        CompanyCode = #{companycode,jdbcType=VARCHAR},
+      </if>
+      <if test="qualitynote != null" >
+        QualityNote = #{qualitynote,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wxzt.pojo.Dddcdr" >
+    update dddcdr
+    set uuid = #{uuid,jdbcType=VARCHAR},
+      sipnum = #{sipnum,jdbcType=VARCHAR},
+      telnum = #{telnum,jdbcType=VARCHAR},
+      Direction = #{direction,jdbcType=VARCHAR},
+      calllen = #{calllen,jdbcType=INTEGER},
+      dtstart = #{dtstart,jdbcType=TIMESTAMP},
+      dtend = #{dtend,jdbcType=TIMESTAMP},
+      callret = #{callret,jdbcType=VARCHAR},
+      recfilename = #{recfilename,jdbcType=VARCHAR},
+      Worknum = #{worknum,jdbcType=VARCHAR},
+      Workname = #{workname,jdbcType=VARCHAR},
+      Groupnum = #{groupnum,jdbcType=INTEGER},
+      Groupname = #{groupname,jdbcType=VARCHAR},
+      CalloutTaskID = #{callouttaskid,jdbcType=INTEGER},
+      CalloutID = #{calloutid,jdbcType=INTEGER},
+      billsec = #{billsec,jdbcType=INTEGER},
+      progresssec = #{progresssec,jdbcType=INTEGER},
+      answersec = #{answersec,jdbcType=INTEGER},
+      waitsec = #{waitsec,jdbcType=INTEGER},
+      progress_mediasec = #{progressMediasec,jdbcType=INTEGER},
+      Province = #{province,jdbcType=VARCHAR},
+      City = #{city,jdbcType=VARCHAR},
+      TelType = #{teltype,jdbcType=VARCHAR},
+      CardType = #{cardtype,jdbcType=VARCHAR},
+      HotLine = #{hotline,jdbcType=VARCHAR},
+      TicketType = #{tickettype,jdbcType=INTEGER},
+      Remark = #{remark,jdbcType=VARCHAR},
+      IsRead = #{isread,jdbcType=INTEGER},
+      dtCreate = #{dtcreate,jdbcType=TIMESTAMP},
+      dtacdStart = #{dtacdstart,jdbcType=TIMESTAMP},
+      dtringStart = #{dtringstart,jdbcType=TIMESTAMP},
+      dtspeakStart = #{dtspeakstart,jdbcType=TIMESTAMP},
+      dthangup = #{dthangup,jdbcType=TIMESTAMP},
+      TimelenTotalCall = #{timelentotalcall,jdbcType=INTEGER},
+      TimelenIvr = #{timelenivr,jdbcType=INTEGER},
+      TimelenAcd = #{timelenacd,jdbcType=INTEGER},
+      TimelenRing = #{timelenring,jdbcType=INTEGER},
+      TimelenSpeak = #{timelenspeak,jdbcType=INTEGER},
+      ScoreSatis = #{scoresatis,jdbcType=INTEGER},
+      ScoreQuality = #{scorequality,jdbcType=INTEGER},
+      DTMF = #{dtmf,jdbcType=VARCHAR},
+      CallOID = #{calloid,jdbcType=VARCHAR},
+      QualityNum = #{qualitynum,jdbcType=VARCHAR},
+      QualityTime = #{qualitytime,jdbcType=VARCHAR},
+      QualityWorknum = #{qualityworknum,jdbcType=VARCHAR},
+      CompanyCode = #{companycode,jdbcType=VARCHAR},
+      QualityNote = #{qualitynote,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wxzt.pojo.Dddcdr" >
+    update dddcdr
+    set uuid = #{uuid,jdbcType=VARCHAR},
+      sipnum = #{sipnum,jdbcType=VARCHAR},
+      telnum = #{telnum,jdbcType=VARCHAR},
+      Direction = #{direction,jdbcType=VARCHAR},
+      calllen = #{calllen,jdbcType=INTEGER},
+      dtstart = #{dtstart,jdbcType=TIMESTAMP},
+      dtend = #{dtend,jdbcType=TIMESTAMP},
+      callret = #{callret,jdbcType=VARCHAR},
+      recfilename = #{recfilename,jdbcType=VARCHAR},
+      Worknum = #{worknum,jdbcType=VARCHAR},
+      Workname = #{workname,jdbcType=VARCHAR},
+      Groupnum = #{groupnum,jdbcType=INTEGER},
+      Groupname = #{groupname,jdbcType=VARCHAR},
+      CalloutTaskID = #{callouttaskid,jdbcType=INTEGER},
+      CalloutID = #{calloutid,jdbcType=INTEGER},
+      billsec = #{billsec,jdbcType=INTEGER},
+      progresssec = #{progresssec,jdbcType=INTEGER},
+      answersec = #{answersec,jdbcType=INTEGER},
+      waitsec = #{waitsec,jdbcType=INTEGER},
+      progress_mediasec = #{progressMediasec,jdbcType=INTEGER},
+      Province = #{province,jdbcType=VARCHAR},
+      City = #{city,jdbcType=VARCHAR},
+      TelType = #{teltype,jdbcType=VARCHAR},
+      CardType = #{cardtype,jdbcType=VARCHAR},
+      HotLine = #{hotline,jdbcType=VARCHAR},
+      TicketType = #{tickettype,jdbcType=INTEGER},
+      Remark = #{remark,jdbcType=VARCHAR},
+      IsRead = #{isread,jdbcType=INTEGER},
+      dtCreate = #{dtcreate,jdbcType=TIMESTAMP},
+      dtacdStart = #{dtacdstart,jdbcType=TIMESTAMP},
+      dtringStart = #{dtringstart,jdbcType=TIMESTAMP},
+      dtspeakStart = #{dtspeakstart,jdbcType=TIMESTAMP},
+      dthangup = #{dthangup,jdbcType=TIMESTAMP},
+      TimelenTotalCall = #{timelentotalcall,jdbcType=INTEGER},
+      TimelenIvr = #{timelenivr,jdbcType=INTEGER},
+      TimelenAcd = #{timelenacd,jdbcType=INTEGER},
+      TimelenRing = #{timelenring,jdbcType=INTEGER},
+      TimelenSpeak = #{timelenspeak,jdbcType=INTEGER},
+      ScoreSatis = #{scoresatis,jdbcType=INTEGER},
+      ScoreQuality = #{scorequality,jdbcType=INTEGER},
+      DTMF = #{dtmf,jdbcType=VARCHAR},
+      CallOID = #{calloid,jdbcType=VARCHAR},
+      QualityNum = #{qualitynum,jdbcType=VARCHAR},
+      QualityTime = #{qualitytime,jdbcType=VARCHAR},
+      QualityWorknum = #{qualityworknum,jdbcType=VARCHAR},
+      CompanyCode = #{companycode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

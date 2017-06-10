@@ -1,0 +1,375 @@
+/*-----------------------初始化样式-------------------------*/
+
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 12px"宋体", "Arial Narrow", HELVETICA;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/*-----------------------导航条样式-------------------------*/
+
+.nav {
+    width: 100%;
+    height: 70px;
+    min-width: 768px;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    background: #536180;
+    overflow: hidden;
+    z-index: 99999;
+}
+
+.nav_1 {
+    min-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav_L {
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nav .nav_L {
+    font-size: 36px;
+    color: white;
+    line-height: 70px;
+}
+
+.nav .nav_L img {
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nav_C,
+.nav_R {
+    width: 35%;
+    height: 70px;
+    position: relative;
+}
+
+.nav_C img {
+    display: block;
+    float: left;
+    margin: 10px 0 0 10px;
+    width: 50px;
+}
+
+.nav_C form {
+    min-width: 400px;
+    position: relative;
+    margin: 12.5px 0 0 20%;
+    position: absolute;
+}
+
+.nav_C form #search {
+    display: inline-block;
+    height: 45px;
+    width: 90%;
+    border-radius: 30px;
+    border-color: white;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 60px;
+}
+
+.nav_C form #button {
+    height: 38px;
+    width: 40px;
+    background: url(../images/serach_08.png) center center no-repeat;
+    background-size: cover;
+    border: 0;
+    outline: none;
+    position: absolute;
+    left: 310px;
+    top: 3px;
+}
+
+.nav_R {
+    margin-left: 50px;
+}
+
+.nav_R ul {
+    min-width: 380px;
+    position: absolute;
+}
+
+.nav_R ul li {
+    float: left;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_R ul li img {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 6px;
+}
+
+.nav_R ul li span {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+/*--------------导航样式结束---------------*/
+/********************左侧逻辑树和主题内容***************/
+.content{
+    width: 100%;
+    position: relative;
+}
+.content-left{
+    width: 18%;
+    float: left;
+    padding-top:40px;
+    background-color: #d1dee4;
+    position: relative;
+}
+.content-right{
+    width: 80%;
+    padding:10px;
+    float: left;
+    position: relative;
+}
+.content li,.content ul{
+    padding-top:10px;
+}
+#key{
+    width: 80%  ;
+    margin-left:20px;
+}
+#treeDemo{
+    font-weight: bolder;
+    font-size: 15px;
+}
+/*--------------右侧选项卡样式开始---------------*/
+
+.center {
+    width: 100%;
+    height: auto;
+    background: white;
+    margin-left:25px;
+    z-index: 111;
+}
+#tab {
+    margin: 10px 0 0 10px;
+}
+#tab div{
+    display: inline-block;
+    width: 10%;
+    height: 24px;
+    border: 2px solid #F5F5F5;
+    font-size:14px;
+    font-weight:400;
+    text-align: center;
+    line-height: 20px;
+    min-width:100px;
+    float: left;
+    cursor: pointer;
+}
+#tab div .main-tabs-del-bg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 2px 4px 2px 0;
+    float: right;
+}
+#tab div .main-tabs-del-bg:hover{ background: #80C26A;}
+#tab div .main-tabs-del{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height:24px;
+    background: url(../images/del.png) center no-repeat;
+    background-size: 8px 8px;
+}
+/*--------------右侧ifrom 样式开始---------------*/
+#main-content{
+    position:absolute;
+    top:0px; left:0px;
+    width:100%;
+    height:100%;
+}
+#tab_men{
+    width:100%;
+    height:95%;
+    overflow: hidden;
+    padding:14px 0 0 40px;
+}
+#tab_men iframe{
+    width:100%;
+    height: 100%;
+    z-index: -1;
+    display: none;
+}
+.selected{
+    background:#536180;
+    color: white;
+}
+.nav{ cursor:pointer;}
+/*左侧下的日历*/
+.rili{
+    position: absolute;
+    bottom:0;
+    height: 150px;
+    width: 100%;
+    padding:15px;
+    border-top:2px solid #ccc;
+    background:#d1dee4;
+}
+.riliLeft{
+    float: left;
+}
+.riliRight{
+    float: right;
+}
+.riliData{
+    height: 50px;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+.riliBottom a{
+    float: right;
+    color: darkred;
+    font-size: 15px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+/*搜索框输入内容显示div*/
+.searchNone{
+    position: absolute;
+    width: 80%;
+    left:20px;
+    top:73px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+    display: none;
+}
+.searchNone ul{
+    list-style: none;
+    min-height:60px;
+    width: 100%;
+}
+.liLj:hover{
+    color: #006666;
+    cursor: pointer;
+}
+/*逻辑树滚动条样式*/
+/* 设置滚动条的样式 */
+#treeDemo::-webkit-scrollbar,.searchNone::-webkit-scrollbar,iframe::-webkit-scrollbar{
+    width:8px;
+    height: 8px;
+}
+/* 滚动槽 */
+#treeDemo::-webkit-scrollbar-track,.searchNone::-webkit-scrollbar-track,iframe::-webkit-scrollbar-track {
+    -webkit-box-shadow:#d1dee4;
+    border-radius:4px;
+}
+/* 滚动条滑块 */
+#treeDemo::-webkit-scrollbar-thumb,.searchNone::-webkit-scrollbar-thumb,iframe::-webkit-scrollbar-thumb {
+    border-radius:4px;
+    background:rgba(0,0,0,0.1);
+    -webkit-box-shadow:rgba(0,0,0,0.1);
+}
+#treeDemo::-webkit-scrollbar-thumb:window-inactive,.searchNone::-webkit-scrollbar-thumb:window-inactive,iframe::-webkit-scrollbar-thumb:window-inactive {
+    background:#d1dddd;
+}
+#treeDemo::-webkit-scrollbar-corner{
+    background:#d1dee4;
+}
+.searchNone::-webkit-scrollbar{
+    width: 6px;
+}
+/*删除x*/
+.del{
+    position: absolute;
+    right:40px;
+    top: 50px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/del.png) center no-repeat;
+    background-size: 8px 8px;
+}
+.del:hover{
+    border-radius: 7px;
+    background-color:#d1dee4;
+    cursor: pointer;
+}

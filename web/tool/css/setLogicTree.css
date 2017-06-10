@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+}
+.content_wrap{
+    margin:0 auto;
+}
+.content_wrap li,.content_wrap ul{
+    padding-top:10px;
+}
+#treeDemo{
+    width: 350px;
+    border:none;
+    background: none;
+    overflow: auto;
+}
+.ztree li span.button.add {
+    margin-left:2px;
+    margin-right: -1px;
+    background-position:-144px 0;
+    vertical-align:top;
+    *vertical-align:middle;
+}

@@ -1,0 +1,10 @@
+*{
+    margin:0;
+    padding:0;
+}
+table,table tr th{
+    text-align: center;
+}
+#Agree,#Reject,#Edit{
+    padding:4px 8px;
+}

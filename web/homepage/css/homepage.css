@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+}
+.content_wrap{
+    width: 100%;
+    position:relative;
+}
+/*公告和知识块样式*/
+.panel{
+    border: 1px solid #536180;
+}
+.panel_left,.panel_right{
+    width: 49%;
+    float: left;
+}
+.panel_right{
+    float: right;
+}
+.panel_title div,.panel_titl{
+    float: left;
+    width: 33.3%;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    background:#d1dee4;
+    border-right:1px solid white;
+    cursor: pointer;
+}
+.panel-heading{
+    padding:15px 15px;
+}
+.panel_titl{
+    width: 100%;
+    text-align: left;
+    padding:0 20px;
+}
+.panel_title div:last-child{
+    border-right:0;
+}
+.panel_left table{
+    display: none;
+}
+.panel table td{
+    width: 25%;
+    text-align: center;
+}
+/*更多*/
+.More{
+    position: absolute;
+    right:20px;
+    top:10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.modal-dialog{
+    width: 90%;
+    height: 100%;
+}
+.modal-content{
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+/*欢迎词*/
+.huanying{
+    width:auto;
+    height:60px;
+    line-height: 60px;
+    border-radius: 15px;
+    background:url("../../images/bg.jpg") ;
+    font-size: 16px;
+    letter-spacing: 6px;
+    padding:0 20px;
+    font-weight: bolder;
+    margin-bottom:10px;
+}
+.huanying span{
+    letter-spacing: 2px;
+}
+/*/!* 设置滚动条的样式 *!/*/
+/*body::-webkit-scrollbar{*/
+    /*width:8px;*/
+    /*height: 8px;*/
+/*}*/
+/*/!* 滚动槽 *!/*/
+/*body::-webkit-scrollbar-track {*/
+    /*-webkit-box-shadow:#d1dee4;*/
+    /*border-radius:4px;*/
+/*}*/
+/*/!* 滚动条滑块 *!/*/
+/*body::-webkit-scrollbar-thumb {*/
+    /*border-radius:4px;*/
+    /*background:rgba(0,0,0,0.1);*/
+    /*-webkit-box-shadow:rgba(0,0,0,0.1);*/
+/*}*/
+/*body::-webkit-scrollbar-thumb:window-inactive {*/
+    /*background:#d1dddd;*/
+/*}*/

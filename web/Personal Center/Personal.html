@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/Personal.css" />
+		<link rel="stylesheet" type="text/css" href="calendar/css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="calendar/css/calendarByDay.css" />
+		
+	</head>
+
+	<body>
+		<div id="Personal">
+			<div class="Personal_nav">
+				<ul>
+					<li class="active">
+						<img src="images/personal_03.png" />
+						<span>个人信息</span>
+					</li>
+					<li>
+						<img src="images/lishi_03.png" />
+						<span>通讯录</span>
+					</li>
+					<li>
+						<img src="images/lishijilu_03.png" />
+						<span>历史记录</span>
+					</li>
+					<li>
+						<img src="images/jishi.png" />
+						<span>记事</span>
+					</li>
+					<li>
+						<img src="images/rili_09.png" />
+						<span>日历</span>
+					</li>
+					<li>
+						<img src="images/shoucang_11.png" />
+						<span>收藏夹</span>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!--
+	作者：1126296609@qq.com
+	时间：2017-04-05
+	描述：导航结束
+-->
+		<div id="conten">
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：个人信息模块开始
+            -->
+			<div class="mian" id="Per" style="display: block;">
+				<div style="min-width:768px;">
+					<div class="photo fl">
+						<div id="preview">
+							<img id="imghead" border="0" src="images/phopo_22.png" width="100" height="100">
+						</div>
+						<input type="file" onchange="previewImage(this)" style="display: none; text-align: center; height:100px;width:100px;" id="previewImg">
+						<input type="button" onclick="$('#previewImg').click();" id="imghad" value="上传图像" />
+					</div>
+
+					<div class="information fl">
+						<p><span class="name">姓名:</span><input disabled="disabled" type="text" value="张三"/><img src="images/sex_25.png" /><span class="job">工号:</span><input disabled="disabled" type="text" value="888"/><span class="work">在职时间:</span><input disabled="disabled" type="text" value="888"/>天</p>
+						<p><span>座右铭:</span><input disabled="disabled" style="width:200px;" type="text" value="好好学习，努力工作！！！"/></p>
+						<textarea disabled="disabled" placeholder="我的心愿:"></textarea>
+					</div>
+					<div style="clear: both;"></div>
+					
+				</div>
+				<div class="tab">
+						<table width="1000" border="0" cellspacing="0" cellpadding="1">
+							<tbody>
+								<tr>
+									<td>出生年月日</td>
+									<td><input disabled="disabled" type="text" value="1994-2-12"/></td>
+									<td>学历</td>
+									<td><input disabled="disabled" type="text" value="本科"/></td>
+									<td>入职时间</td>
+									<td><input disabled="disabled" type="text" value="2015-4-3"/></td>
+								</tr>
+								<tr>
+									<td>籍贯</td>
+									<td><input disabled="disabled" type="text" value="湖北-襄阳-谷城"/></td>
+									<td>婚姻状况</td>
+									<td><input disabled="disabled" type="text" value="未婚"/></td>
+									<td>血型</td>
+									<td><input disabled="disabled" type="text" value="O型"/></td>
+								</tr>
+								<tr>
+									<td>联系电话</td>
+									<td><input disabled="disabled" type="text" value="18329178325"/></td>
+									<td>紧急联系电话</td>
+									<td><input disabled="disabled" type="text" value="18329178325"/></td>
+									<td>邮箱</td>
+									<td><input disabled="disabled" type="text" value="152245sia@.com"/></td>
+								</tr>
+								<tr>
+									<td>QQ</td>
+									<td><input disabled="disabled" type="text" value="1245242412"/></td>
+									<td>微信</td>
+									<td><input disabled="disabled" type="text" value="18329178325"/></td>
+									<td>毕业学校</td>
+									<td><input disabled="disabled" type="text" value="北京大学"/></td>
+								</tr>
+								<tr>
+									<td>专业</td>
+									<td><input disabled="disabled" type="text" value="计算机"/></td>
+									<td>现居住地址</td>
+									<td><input disabled="disabled" type="text" value="北京市朝阳区"/></td>
+									<td>兴趣爱好</td>
+									<td><input disabled="disabled" type="text" value="看书"/></td>
+								</tr>
+								<tr>
+									<td>最想去的地方</td>
+									<td><input disabled="disabled" type="text" value="葫芦岛"/></td>
+									<td>最爱的书</td>
+									<td><input disabled="disabled" type="text" value="钢铁是怎样练成的"/></td>
+									<td>最喜欢自己那一点</td>
+									<td><input disabled="disabled" type="text" value="长的帅"/></td>
+								</tr>
+								<tr>
+									<td>转岗时间</td>
+									<td><input disabled="disabled" type="text" value="2016-5-7"/></td>
+									<td>离职时间</td>
+									<td><input disabled="disabled" type="text" value="2017-4-3"/></td>
+									<td>入职时间</td>
+									<td><input disabled="disabled" type="text" value="2015-4-3"/></td>
+								</tr>
+
+							</tbody>
+						</table>
+						<div>
+							<input id="edit" type="button" value="编辑" />
+                            <input id="Preser" type="button" value="保存" />
+						</div>
+                    
+					</div>
+			</div>
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：通讯录模块开始
+            -->
+			<div class="mian">
+			  <div class="form">
+                 <span>部门名称:</span>
+                 <select>
+                 	<option>客服一部</option>
+                 	<option>客服二部</option>
+                 	<option>行政部</option>
+                 	<option>人事部</option>
+                 </select>
+                 <div class="seach">
+	                 	<span class="fl">全员搜索:</span>
+						<form class="fl" >
+								<input style="margin: 0 auto;" id="key" type="search" placeholder="请输入关键词..." />
+								<input style="margin: 0 auto;" id="button" type="button" />
+						</form>
+			     </div>
+              </div>
+              <div style="clear: both;"></div>
+              <div class="department">
+	             <div class="dep-1 fl">
+	              	 	<img src="images/phopo_22.png" />
+	              	 	<form class="fl" id="information" >
+	              	 		<label>部门名称:</label><input disabled="disabled" type="text" value="客服一部" />
+	              	 		<label>姓&ensp;&ensp;&ensp;&ensp;名:</label><input disabled="disabled" type="text" value="张三"  />
+	              	 		<label>联系电话:</label><input disabled="disabled" type="text" value="18345245211" />
+	              	 		<label>电子邮箱:</label><input disabled="disabled" type="text"  value="146265sian@.com" />
+	              	 		
+	              	 	</form>
+	              	 </div>
+              	 <div class="dep-1 fl">
+              	 	<img src="images/phopo_22.png" />
+              	 	<form class="fl" id="information">
+              	 		<label>部门名称:</label><input disabled="disabled" type="text" value="客服一部" />
+	              	 		<label>姓&ensp;&ensp;&ensp;&ensp;名:</label><input disabled="disabled" type="text" value="张三"  />
+	              	 		<label>联系电话:</label><input disabled="disabled" type="text" value="18345245211" />
+	              	 		<label>电子邮箱:</label><input disabled="disabled" type="text"  value="146265sian@.com" />
+              	 		
+              	 	</form>
+              	 </div>
+              	 <div class="dep-1 fl">
+              	 	<img src="images/phopo_22.png" />
+              	 	<form class="fl" id="information">
+              	 		<label>部门名称:</label><input disabled="disabled" type="text" value="客服一部" />
+	              	 		<label>姓&ensp;&ensp;&ensp;&ensp;名:</label><input disabled="disabled" type="text" value="张三"  />
+	              	 		<label>联系电话:</label><input disabled="disabled" type="text" value="18345245211" />
+	              	 		<label>电子邮箱:</label><input disabled="disabled" type="text"  value="146265sian@.com" />
+              	 		
+              	 	</form>
+              	 </div>
+              	 <div class="dep-1 fl">
+              	 	<img src="images/phopo_22.png" />
+              	 	<form class="fl" id="information">
+              	 		<label>部门名称:</label><input disabled="disabled" type="text" value="客服一部" />
+	              	 		<label>姓&ensp;&ensp;&ensp;&ensp;名:</label><input disabled="disabled" type="text" value="张三"  />
+	              	 		<label>联系电话:</label><input disabled="disabled" type="text" value="18345245211" />
+	              	 		<label>电子邮箱:</label><input disabled="disabled" type="text"  value="146265sian@.com" />
+              	 	</form>
+              	 </div>
+              	 
+              </div>
+			</div>
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：历史记录模块开始
+            -->
+			<div class="mian">
+				 <div class="history-time"><span>今天</span>-<span>2017年3月1日星期三</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>
+				 
+				 <div class="history-time"><span>今天</span>-<span>2017年3月1日星期三</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>
+				 
+				 <div class="history-time"><span>今天</span>-<span>2017年3月1日星期三</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>收藏了医师资质上线</span></div>
+				 
+				 <div class="more"><span>查看更多</span></div>
+			</div>
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：记事模块开始
+            -->
+			<div class="mian">
+				 <div class="history-time"><span>今天</span>-<span>2017年3月1日星期三</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				
+				 <div class="history-time"><span>今天</span>-<span>2017年3月1日星期三</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>	
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				 <div class="history-text"><span>上午9:30</span><span>张三</span><span>对公告进行了修改</span></div>
+				 <div class="more"><span>查看更多</span></div>
+			</div>
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：日历模块开始
+            -->
+			<div class="mian">
+			<div class="calbody">
+    <header>
+        <div class="cal_top cal_top_mon">
+            <ul class="view_type right">
+                <li class="cal_month currpage">
+                    <a href="javascript:;" class="btn_gray btn_month">月</a>
+                </li>
+                <li class="cal_day">
+                    <a href="javascript:;" class="btn_gray btn_day">日</a>
+                </li>
+            </ul>
+            <div class="left">
+                <a class="btn_gray" href="javascript:;" id="toToday">今天</a>
+            </div>
+            <div>
+                <div id="title_year_mouthOrDay" class="g_title" date="2016_06">
+                    <a href="javascript:;" class="btn_pre" to="-1">上</a><h1></h1><a href="javascript:;" class="btn_next" to="1">下</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="cal_m_container mouthOrDay">
+        <table>
+            <tr class="week_title"><th>星期日</th><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th><th>星期六</th></tr>
+        </table>
+        <div class="cal_m_content" style="height: 590px"></div>
+    </div>
+    <div class="day_main day_main_nofate mouthOrDay" hidden>
+        <div class="day_nav settingtable">
+            <div class="day_info">
+                <div class="day_num">20</div>
+                <div>2016年6月20日 星期一</div>
+                <div>丙申猴年 五月十六</div>
+            </div>
+            <div></div>
+        </div>
+        <div class="day_detail">
+            <form id="QueryForm" hidden>
+                <table id="QueryConditions"><!--查询条件框-->
+                    <tr>
+                        <td>
+                            <input type="button" id="Button_Query" class="btn btn-primary" value="查询">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <table id="table">
+                <!--<caption align="top">录音记录表单</caption>-->
+                <tr class="table th">
+                    <th class="th" width="60px"><input type="checkbox" id="table_check">序号</th>
+                    <th class="datetime" name="dtVisit" width="180px">回访日期</th>
+                    <th class="text" name="custName" width="120px">客户名称</th>
+                    <th class="text" name="mobile" width="180px">客户电话</th>
+                    <th class="select" name="worknum" width="120px">归属人</th>
+                    <th class="th" width="1px"></th>
+                </tr>
+            </table>
+        </div>
+        <div class="bt_line_1"></div>
+    </div>
+</div>
+		
+			
+			
+			</div>
+			<!--
+            	作者：1126296609@qq.com
+            	时间：2017-04-07
+            	描述：收藏夹模块开始
+            -->
+			
+			<div class="mian">
+				<div class="L-tab fl L-tab-nav">
+					<ul>
+						<li class="selected_1"><img src="images/wenjianjia.png" /><input disabled="true" class="selected_1"  type="text" value="公告1"></li>
+						<li><img src="images/wenjianjia.png" /><input disabled="true"   type="text" value="公告2"></li>
+						
+						<li><img src="images/wenjianjia.png" /><input disabled="true"  type="text" value="公告3"></li>
+						<li><img src="images/wenjianjia.png" /><input  disabled="true" type="text" value="公告4"></li>
+					</ul>
+					<input type="button" id="Add" value="添加" />
+				</div>
+				<div class="R-tbody fr">
+					<div style="display: block;">
+		                 <ul>
+							<li><span>今天</span>-<span>2017年3月1日星期三</span></li>
+							<li><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>上午9:30</span><span>收藏了医师资质上线</span></li>
+					    </ul>        
+					</div>
+					<div>
+						<ul>
+							<li><span>昨天</span>-<span>2017年4月1日星期四</span></li>
+							<li><span>上午10:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>上午9:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>上午8:30</span><span>收藏了医师资质上线</span></li>
+					    </ul>
+					</div>
+					<div>
+						<ul>
+							<li><span>前天</span>-<span>2017年4月2日星期五</span></li>
+							<li><span>下午14:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>下午16:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>下午17:30</span><span>收藏了医师资质上线</span></li>
+					    </ul>
+						
+					</div>
+					<div>
+						<ul>
+							<li><span>2017年4月2日星期五</span></li>
+							<li><span>下午14:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>下午16:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></li>
+							<li><span>下午17:30</span><span>收藏了医师资质上线</span></li>
+					    </ul>
+					</div>
+				</div>
+				
+			   
+			</div>
+		</div>
+	</body>
+	<script src="calendar/js/jquery-1.11.3.min.js"></script>
+     <script src="js/Center.js"></script>
+     <!--
+     	作者：1126296609@qq.com
+     	时间：2017-04-06
+     	描述：收藏夹tab切换,以及样式修改；
+     -->
+     <script>
+
+$(function() {
+			$(".mian  .L-tab-nav").on('click', 'ul li', function() {
+				$(this).addClass("selected_1").siblings().removeClass("selected_1");
+
+				var index = $(this).index();
+				if ($(this).hasClass('selected_1')) {
+				$(this).children('input:disabled').css('background','#f1f6f9')
+				$(this).siblings().children('input').css('background','white')
+				}
+				$(".mian .R-tbody div").eq(index).show().siblings().hide();
+               
+			});
+			/*双击文件夹可编辑*/
+			$('.mian .L-tab-nav').on('dblclick','ul li ', function(){
+				$(this).children('input').removeAttr('disabled').css('background','white').focus();
+				
+			})
+			$('.mian .L-tab-nav').on('blur','ul li input', function(){
+				$(this).attr('disabled',true).css('background','#f1f6f9');
+				
+			})
+			
+		});
+     </script>
+     
+    <!--
+    	作者：1126296609@qq.com
+    	时间：2017-04-06
+    	描述：添加文件夹
+    -->
+     <script>
+     	$(function(){
+     	$('.mian  .L-tab-nav #Add').on("click",function(){
+     		$('.mian  .L-tab-nav ul').append('<li><img src="images/wenjianjia.png"/><input disabled="disabled"  type="text" value="公告4"></li>');
+     		var Htm='<div><ul><li><span>2017年4月2日星期五</span></li><li><span>下午14:30</span><span>收藏了医师资质上线收藏了医师资质上线收藏了医师资质上线</span></li><li><span>下午16:30</span><span>收藏了医师资质上线收藏了医师资质上线</span></li><li><span>下午17:30</span><span>收藏了医师资质上线</span></li></ul></div>'
+     		
+     		$('.mian .R-tbody').append(Htm);
+     	})
+     		
+     	})
+     </script>
+     <!--
+     	作者：1126296609@qq.com
+     	时间：2017-04-07
+     	描述：个人信息的编辑功能
+     -->
+     <script>
+     	$(function(){
+     		$('#Per div #edit').on('click',function(){
+     				$('#Per :disabled, textarea').attr('disabled',false).css("background",'#f2f4f7')
+     		})
+     		     		$('#Per div #Preser').on('click',function(){
+     				$('#Per :text ,textarea').attr('disabled','disabled').css("background",'')
+     		})
+     	})
+     </script>
+     <script src="calendar/js/calendar.js"></script>
+     <script src="calendar/js/lunarCalendar.js"></script>
+     <script src="calendar/js/layer.min.js"></script>
+     <script src="calendar/js/tableJS_new.js"></script>
+     <!--
+     	作者：1126296609@qq.com
+     	时间：2017-04-10
+     	描述：日期
+     -->
+     <script>
+    $(function(){
+        var calendar = new Calendar(document.getElementsByClassName("cal_m_content"));
+        var tableJs = new TableJs();
+        var parameter = {
+            "url" :　"../query/visit?action=0",
+            "button" : [],
+            "isChange" : true
+        };
+        tableJs.init($("#table"),$("#QueryForm"),parameter);
+        /*生成日历数据*/
+        calendar.showToday();
+        $(".g_title").on("click","a",function(){
+            var g_title = $(this).parent();
+            var num = $(this).attr("to");
+            if(g_title.hasClass("show_day")){/*切换上下日*/
+                var bd = new CalendarByDay(calendar.newSelectedDay);
+                bd.changeByDay(num);
+                calendar.newSelectedDay = bd.selectedDay;
+                /*查询当天数据*/
+                parameter.url = "../query/visit?action=0"+"&firstDt="+calendar.getSelectedDayForH5(0)+"&endDt="+calendar.getSelectedDayForH5(1);
+                tableJs.QueryTable(6,parameter,"Today");
+            }else{/*切换上下月*/
+                var yearAndMouth = $(this).parent().attr("date").split("-");
+                calendar.changeByMouth(yearAndMouth[0],yearAndMouth[1]-1,num);
+            }
+        });
+        $("#toToday").on("click",function(){/*返回今日*/
+            calendar.showToday();
+        });
+        /*月、日按钮切换*/
+        $("ul.view_type").on("click","li",function(){
+            var className = this.className;
+            if(className.indexOf("currpage")!=-1) return false;
+            /*按钮切换*/
+            $(this).siblings().removeClass("currpage").end().addClass("currpage");
+            /*头部显示信息样式切换*/
+            $(".g_title").toggleClass("show_day");
+            /*元素显示切换*/
+            $(".mouthOrDay").toggle();
+            if(className.indexOf("cal_month")!=-1){
+                /*显示选中日期的当月数据*/
+                calendar.init(calendar.newSelectedDay.getFullYear(),calendar.newSelectedDay.getMonth());
+                /*设置选中项*/
+                var date = calendar.getSelectedDayForH5();
+                $(".date_box").removeClass("date_selected");
+                $("#div-"+date).addClass("date_selected");
+            }else if(className.indexOf("cal_day")!=-1){
+                /*查询当天数据*/
+                parameter.url = "../query/visit?action=0"+"&firstDt="+calendar.getSelectedDayForH5(0)+"&endDt="+calendar.getSelectedDayForH5(1);
+                tableJs.QueryTable(6,parameter,"Today");
+                /*设置当日日期*/
+                var bd = new CalendarByDay(calendar.newSelectedDay);
+                bd.init();
+            }
+        });
+        $(".cal_m_content").on("click","div.date_box",function(){/*绑定显示月份状态下，点击每日的切换*/
+            $(".date_box").removeClass("date_selected");
+            $(this).addClass("date_selected");
+            /*设置选中时间*/
+            var dateList = $(this).attr("date").split("-");
+            calendar.newSelectedDay = new Date(dateList[0],dateList[1]-1,dateList[2]);
+        }).on("click",".month_event li:not(.addevent)",function(){/*点击日程打开客户资料*/
+            var mobile = $(this).find("p").attr("mobile");
+            var UserData = JSON.parse(localStorage.getItem("UserData"));
+            layer.open({
+                type: 2,
+                title: "客户信息",
+                shadeClose: true,
+                shade: 0.1,
+                maxmin: true,
+                area: ['90%', '99%'],
+                content: '../ToPlayScreen.html?&dh='+mobile+'&gh='+UserData[0][1],
+                end:function(){
+                    calendar.getMouthData();
+                }
+            });
+        });
+        $("#table").on("dblclick","tr", function () {
+            var mobile = $(this).find("td").eq(3).find("a").data("callout");
+            var UserData = JSON.parse(localStorage.getItem("UserData"));
+            layer.open({
+                type: 2,
+                title: "客户信息",
+                shadeClose: true,
+                shade: 0.1,
+                maxmin: true,
+                area: ['90%', '99%'],
+                content: '../ToPlayScreen.html?&dh='+mobile+'&gh='+UserData[0][1],
+                end:function(){
+                    calendar.getMouthData();
+                }
+            });
+        })
+
+    });
+</script>
+
+</html>

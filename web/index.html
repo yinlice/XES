@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>知识库</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!------------------------------导航栏------------------------->
+<div class="nav">
+    <div class="nav_1">
+        <div class="nav_L fl">
+
+            <img src="images/logo.png">
+        </div>
+
+        <div class="nav_C fl">
+            <a><img src="images/home.png" /></a>
+            <form class="fr">
+                <input id="search" type="search" placeholder="请输入关键词..." />
+                <input id="button" type="button" />
+            </form>
+        </div>
+
+        <div class="nav_R fr">
+            <ul>
+                <li id="knowledge">
+                    <img src="images/ku1_07.png">
+                    <span>知识库</span>
+                </li>
+                <li id="notice">
+                    <img src="images/gonggao_09.png">
+                    <span>公告</span>
+                </li>
+                <li id="edit">
+                    <img src="images/bianji_11.png">
+                    <span>编辑</span>
+                </li>
+                <li id="tool">
+                    <img src="images/shezhi.png">
+                    <span>设置</span>
+                </li>
+                <li id="news">
+                    <img src="images/xiaoxi_13.png">
+                    <span>消息</span>
+                </li>
+                <li id="personal">
+                    <img src="images/geren_15.png">
+                    <span>个人中心</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!------------------------------头部导航条结束----------------------------------------->
+<!--左侧逻辑树和主题内容区-->
+<div class="content">
+    <div class="content-cont">
+        <div class="content-left">
+            <input type="text" class="form-control empty" id="key" placeholder="搜索">
+            <span class="del"></span>
+            <div class="searchNone">
+                <ul></ul>
+            </div>
+            <ul id="treeDemo" class="ztree" style="margin-left:10px;background-color: #d1dee4;"></ul>
+            <div class="rili">
+                <h4 style="height:5px;margin-bottom:50px;"><span class="riliLeft">日历</span><span class="riliRight"></span></h4>
+                <div class="riliData">
+                    <div>日程统计：<span>3</span></div>
+                </div>
+                <div class="riliBottom"><a href="">更多</a></div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div id="main-content">
+                    <div class="center">
+                        <div id="tab">
+                            <div class="selected">
+                                <span>首页</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab_men">
+                        <iframe  style="display: block;" src="homepage/homepage.html" id="" scrolling="auto" frameborder="0"></iframe>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+<script src="js/index.js"></script>
+</html>
+
+
+

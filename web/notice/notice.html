@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/notice.css"/>
+</head>
+<body>
+     <div class="content_wrap">
+         <table class="table mtk  table-striped">
+             <thead>
+             <tr style="font-size:18px;">
+                 <th>名称</th>
+                 <th>时间</th>
+                 <th>访问量</th>
+                 <th>访客量</th>
+             </tr>
+             </thead>
+             <tbody>
+
+             </tbody>
+         </table>
+         <div id="information" style="text-align: center;">
+             总共<span id="count"></span>&nbsp;&nbsp;当前页:<span id="currentPage"></span>/ <span id="countPage"></span>页&nbsp;&nbsp;
+             <input type="number" id="jumpPage">&nbsp;<a href="javascript:void(0)" class="paging">跳转</a>
+         </div>
+         <!--选择上下页-->
+         <div id="Paging" style="text-align: center">
+             <span id="pagingFirst">
+                 <a href="javascript:void(0)" class="paging">首页</a>
+                 <a href="javascript:void(0)" class="paging">上一页</a>
+             </span>
+             <span id="pagingEnd">
+                 <a href="javascript:void(0)" class="paging">下一页</a>
+                 <a href="javascript:void(0)" class="paging">尾页</a>
+             </span>
+         </div>
+
+     </div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="js/notice.js"></script>
+</html>

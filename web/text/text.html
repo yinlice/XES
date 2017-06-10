@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/text.css"/>
+</head>
+<body>
+    <div class="content_wrap">
+        <div class="content-top">
+            <h4>浏览人数：1234</h4>
+            <div class="butt" style="width: 200px;">
+                <i class="fa fa-thumbs-o-up"></i><span>163</span>
+                <i class="fa fa-thumbs-o-down"></i><span>2</span>
+                <i class="fa fa-star" data-toggle="modal" data-target="#myModal1"></i><span data-toggle="modal" data-target="#myModal1">收藏</span>
+            </div>
+            <!-- 收藏模态框（Modal） -->
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel1">文件选择</h4>
+                        </div>
+                        <div class="modal-body">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary">收藏</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+
+        </div>
+        <div class="content-middle">
+            <p>
+                <span>张三</span>最后发表于 <span>2017-2-23 19:20:23</span>
+                <a class="selectUpdate" data-toggle="modal" data-target="#myModal">(查看更改)</a>
+            </p>
+            <div class="text">
+                <h3>文件名</h3>
+                <p>
+                    本书包括有关基本概念、工程量清单计价规范的背景、
+                    工程量清单的编制、工程量清单的价格构成、
+                    工程量清单和招投标、工程量清单和施工合同工程
+                    价款的结算与决算等内容，并根据专业技术人员日常
+                    工作中遇到的疑点、难点，逐一提出问题，用简明
+                    易懂的语言辅以直观的图表，有针对性地、一事一
+                    议地给予解答。 本书以问答形式叙述工程技术问题，
+                    特点是问题涉及面广、解答深入浅出，针对性强。
+                    读者可带着问题翻阅，从中找出答案，汲取知识和教益。
+                </p>
+            </div>
+            <!-- 查看更改模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">更改记录</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>更改时间</th>
+                                    <th>更改备注</th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+        <div class="content-bottom">
+            <div class="comment">
+                <p>
+                    <strong class="zuoxi">坐席一</strong><strong>:&nbsp;&nbsp;&nbsp;</strong><span style="color: #ccc;font-size:5px;">2017-4-5</span><br/>
+                    <span class="comCont" style="text-indent: 2em">评论的第一个aaaaaaaaaaaaa</span>
+                </p>
+                <p>
+                    <strong class="zuoxi">坐席一</strong><strong>:&nbsp;&nbsp;&nbsp;</strong><span style="color: #ccc;font-size:5px;">2017-4-5</span><br/>
+                    <span class="comCont" style="text-indent: 2em">评论的第一个aaaaaaaaaaaaa</span>
+                </p>
+            </div>
+            <textarea class="textContent" name="content" style="width:100%;height: 200px;max-height:100px;float: left"></textarea>
+            <button type="button" class="btn btn-primary btn-lg" id="submit">提交评论</button>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
+<script src="../js/kindeditor-4.1.7/kindeditor-all-min.js"></script>
+<script src="js/text.js"></script>
+</html>

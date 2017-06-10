@@ -1,0 +1,427 @@
+﻿td, input, button, select, body{
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+    font-size: 12px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+form, body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a, a:link, a:visited {
+    color: #3D5E86;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+a.callOut{
+    color: #428bca;
+}
+a.callOut:hover{
+    text-decoration: underline;
+}
+input, textarea, a {
+    outline: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+}
+/****头部信息****/
+.calbody {
+    padding: 10px 13px 10px 0;
+    color: #000;
+}
+.g_title {
+    text-align: center;
+    margin: 0 225px 0 145px;
+}
+.cal_top {
+    overflow: hidden;
+}
+.cal_top_mon, .cal_m_container {
+    min-width: 770px;
+}
+.cal_top .left a {
+    float: left;
+    margin-right: 5px;
+}
+.btn_gray {/*顶部按钮：今天*/
+    border: 1px solid #888;
+    color: #000000!important;
+    background: #F3F3F3;
+    background: -moz-linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+    background: -webkit-linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+    background: -o-linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+    background: -ms-linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',endColorstr='#d7d7d7',GradientType=0 );
+    background: linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+}
+
+.btn_blue, .btn_red, .btn_gray {/*顶部链接设置*/
+    display: inline-block;
+    height: 22px;
+    min-width: 24px;
+    line-height: 24px;
+    line-height: 23px\9\0;
+    _line-height: 26px;
+    _overflow-y: hidden;
+    padding: 0 12px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    border-radius: 3px;
+    border-radius: 0\9\0;
+}
+
+/*月/日切换*/
+.view_type a.btn_gray {
+    width: 56px;
+    padding: 0;
+    text-align: center;
+}
+
+.cal_month a.btn_gray {
+    border-radius: 3px 0 0 3px;
+    margin-right: 0;
+}
+.cal_day a.btn_gray {
+    border-radius: 0 3px 3px 0;
+    border-left: 0;
+}
+.currpage a.btn_gray {/*选中的按钮*/
+    border-color: #919191;
+    border-top-color: #494949;
+    _overflow: hidden;
+    cursor: default;
+    color: #fff!important;
+    background: #494949;
+    background: -moz-linear-gradient(top,#494949,#919191);
+    background: -webkit-linear-gradient(top,#494949,#919191);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#494949',endColorstr='#919191');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#494949',endColorstr='#919191')";
+}
+
+
+a.btn_next, a.btn_pre {
+    position: relative;
+    top: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 18px;
+    line-height: 18px;
+    margin: 0 10px;
+    border: 1px solid transparent;
+    _border-color: tomato;
+    _filter: chroma(color=tomato);
+}
+.g_title h1 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 145px;
+    text-align: center;
+    color: #2a4564;
+    font-size: 20px;
+    line-height: 26px;
+    font-family: "Lucida Grande",Verdana,"Microsoft Yahei";
+    _font-family: "\5B8B\4F53";
+}
+.g_title.show_day h1{
+    width: 270px;
+}
+
+.view_type li {
+    float: left;
+}
+
+.cal_m_container{
+    min-width: 770px;
+    margin: 15px 5px;
+}
+.cal_m_container table{
+    table-layout:fixed;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.week_line {
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+.week_title th{
+    text-align: left;
+    padding: 0 8px 4px;
+    font-weight: normal;
+    color: #bcc2cd;
+}
+
+.cal_m_content{
+    position: relative;
+    outline: none;
+}
+.table_content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.table_border td,.table_content td {
+    position: relative;
+    z-index: 1;
+}
+.cal_m_content .week_line{
+    height: 20%;
+}
+.sixweeks .week_line {
+    height: 16.666666666666667%;
+}
+
+.table_content td {
+    position: relative;
+    z-index: 1;
+}
+.cal_m_content td {
+    padding: 0;
+    vertical-align: top;
+}
+.cal_m_content table, .cal_m_content tr, .cal_m_content td {
+    height: 100%;
+}
+
+/*时间盒*/
+.date_box {
+    -webkit-transition: top .1s linear,left .1s linear;
+    -moz-transition: top .1s linear,left .1s linear;
+}
+.cal_m_content td .date_box {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    outline: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+    .cal_m_content td .date_box {
+        position: absolute;
+    }
+}
+
+.date_selected .selected_border {
+    background-color: #fff;
+    border: 1px solid #93d4fc;
+    box-shadow: 0 0 5px #60caff;
+    border-collapse: separate;
+}
+.selected_border {
+    border: 1px solid transparent;
+    _border-color: tomato;
+    _filter: chroma(color=tomato);
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 0;
+    left: -1px;
+    top: 0;
+    bottom: -1px;
+    _left: 0;
+    _bottom: 0;
+    _height: 99%;
+}
+.date_selected:hover .addevent {
+    opacity: 1;
+    visibility: visible;
+}
+.month_event li:hover {
+    background: #ceeafb;
+}
+.date_selected .addevent {
+    _visibility: visible;
+    cursor: pointer;
+}
+
+.month_date {
+    padding: 0 8px;
+    height: 22px;
+    line-height: 22px;
+    text-align: left;
+    color: #b2b7bf;
+}
+.today_title {
+    overflow: hidden;
+    color: #c9dfec;
+    background-color: #0d7cc1;
+    background: -webkit-linear-gradient(top,#1d86c7,#0074bc);
+    background: -moz-linear-gradient(top,#1d86c7,#0074bc);
+}
+.right, .qm_right ,.cal_top .right .btn_gray{
+    float: right;
+}
+.left, .qm_left {
+    float: left;
+}
+.month_date .month_date_num {
+    font-family: georgia;
+    font-size: 18px;
+    _font-family: "lucida Grande",Verdana;
+    _font-size: 12px;
+    color: #888;
+}
+.month_date .month_date_compete {
+    font-family: "lucida Grande",Verdana;
+    font-size: 12px;
+}
+.today_title .month_date_num {
+    color: #fff;
+}
+
+.table_content .week_line .weekend .month_event_more {
+    background-color: #f5f5f5;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,#f5f5f5 50%);
+    background: -moz-linear-gradient(top,rgba(255,255,255,0) 0%,#f5f5f5 50%);
+}
+.month_event_more {
+    display: none;
+    position: absolute;
+    left: 2px;
+    bottom: 0;
+    _bottom: -1px;
+    z-index: 2;
+    width: 98%;
+    text-align: center;
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    height: 10px\9;
+    line-height: 0\9;
+    background-color: #fff;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%);
+    background: -moz-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%);
+}
+
+.month_event_more .arrow_b {
+    margin-top: 3px\9;
+    border-top-color: #999;
+}
+.arrow_b {
+    border-style: solid dashed dashed;
+    border-width: 4px 4px 0;
+    border-color: transparent;
+    _border-color: tomato;
+    _filter: chroma(color=tomato);
+    border-top-color: #000;
+}
+.arrow_t, .arrow_b {
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 0;
+    cursor: pointer;
+}
+
+.table_border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.table_border .week_line:first-child td {
+    border-top-color: #c3c3c3;
+}
+.table_border .week_1st_td {
+    border-left-color: #c3c3c3;
+}
+
+.table_border .weekend {
+    background-color: #f5f5f5;
+}
+.table_border td {
+    height: auto;
+    border: 1px solid #dadada;
+    border-bottom-width: 0;
+    background-color: #fff;
+}
+
+.cal_bottom_line {
+    height: 6px;
+    overflow: hidden;
+    border: 1px solid #cdcdcd;
+    border-top-color: #c3c3c3;
+}
+.cal_bottom_in {
+    height: 1px;
+    overflow: hidden;
+    border: solid #d6d6d6;
+    border-width: 1px 0;
+    margin-top: 2px;
+}
+
+
+.date_selected .addevent {
+    _visibility: visible;
+    cursor: pointer;
+}
+.date_box .addevent {
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+    -webkit-transition: opacity 0.15s linear;
+    -moz-transition: opacity 0.15s linear;
+}
+.month_event li {
+    color: #494949;
+    height: 14px;
+    line-height: 14px;
+    padding: 2px 7px;
+    _overflow: hidden;
+}
+.date_box .addevent a {
+    display: block;
+    color: #B2B7BF;
+}
+.date_box .addevent a:hover {
+    color: #3D5E86;
+}
+.date_box .addevent a:active {
+    color: #FFFFFF;
+}
+.month_event li .event_time {
+    float: right;
+    color: #c2c2c2;
+    font-size: 10px;
+    -webkit-text-size-adjust: none;
+    cursor: default;
+}
+.month_event li .event_msg {
+    margin: 0 0 0 14px;
+    line-height: 15px;
+    _line-height: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    _white-space: normal;
+    _height: 14px;
+    _word-wrap: break-word;
+}
+
+.table_content td.td_selected {
+    z-index: 2;
+}
